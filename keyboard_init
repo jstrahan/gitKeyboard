@@ -1,0 +1,86 @@
+
+keyboard.init()
+
+SYNTEX:
+
+	keyboard.init( options )
+
+OPTIONS:
+	
+	type,				string,		"native" or "custom" keyboard
+	speed,				number,		speed in milliseconds to show/hide keyboard
+	bounce,				boolean, 	make keys bounce when pressed
+	click,				boolean, 	make click sound when keys pressed
+	background,			table, 		arg1 is color name, arg2 is color alpha
+	backgroundStroke,	        table,		arg1 is color name, arg2 is color alpha
+	key,				table,		arg1 is color name, arg2 is color alpha,
+							arg3 is color name for shift key when pressed,
+							arg4 is color name for symbol key when pressed
+	keyStroke,			table,		arg1 is color name, arg2 is color alpha
+	letters,			table,		arg1 is color name, arg2 is color alpha,
+							arg3 is color name when key pressed
+	font,				string		font for letters
+
+NOTE:
+	** All options or optional
+	   default keyboard is "native"
+	   default custom options are:
+
+	speed 				= 250
+	bounce 				= true
+	click 				= true
+	background 			= { "lightGray", 0.9 }
+	backgroundStroke	        = { "darkGray", 1 }
+	key 				= { "white", 1, "cornflowerBlue", cornflowerBlue" }
+	keyStroke			= { "black", backgroundStroke alpha }
+	letters				= { "black", 1, "cornflowerBlue" }
+	font 				= native.systemFontBold
+--------------------------------------------------------------------------------------
+
+SETTINGS THAT CAN BE CHANGED BY CODE:
+
+	keyboard.click =,		boolean, turn on/off
+	keyboard.bounce =,		boolean, turn on/off
+	NOTE: takes affect on next inputBox focus
+
+ITEMS RETURNED:
+
+	_h = keyboard.getHeight(),				returns the height of the current keyboard
+	_s = keyboard.getSpeed(),				returns the speed the current keyboard shows/hides
+	_i = keyboard.isShowing(),				returns if keyboard is showing
+	_f = keyboard.getFieldResults( [arg] )	                returns the results of the inputBoxes
+		 arg, scene name 		  		   only fields in the scene
+		 arg if not included 				   returns all fields in app  
+
+
+EVENT LISTENER:
+
+	Runtime,	name = "keyboard"
+		       phase = "changePosition", 		dispatches when keyboard starts to show
+	                       "changePositionComplete", 	dispatches when keyboard completely showing,	** custom keyboard only
+			       "isShowing", 			dispatches when inputBox focus changes,		** custon keyboard only
+			       "returnPosition", 		dispatches when keyboard starts to hide
+			       "returnPositionComplete"	        dispatches when keyboard completely hiding,	** custom keyboard only
+		       speed = 					speed keyboard shows/hides
+		       height=					height of current keyboard 			** custom keyboard only
+		       amount= 		       		        amount to move inputBoxes so current box is visible
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

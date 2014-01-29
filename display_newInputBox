@@ -1,0 +1,64 @@
+
+display.newInputBox()
+
+SYNTEX:
+	
+	object = display.newInputBox( [group,] x, y, width, height [, options] )
+
+		group,				display group to insert into 			optional
+		x,				x position 					required
+		y, 				y position 					required
+		width,				width of inputBox 				required
+		height,				height of inputBox 				required
+		options,			inputBox options 				optional
+
+OPTIONS:
+	
+		help =,				string,						help text to display in inputBox
+		textColor =,			table,		color of text			arg1 is color name, arg2 is color alpha
+		boxColor =,			table,		color of inputBox 		arg1 is color name, arg2 is color alpha
+		strokeColor =, 			table,          color of box stroke 		arg1 is color name, arg2 is color alpha
+		strokeWidth =,			number,						width of inputBox stroke
+		focus =,			table,	        stroke color when focus 	arg1 is color name, arg2 is color alpha
+		font =,				table, 						arg1 is font name, arg2 is fontSize
+		maxChar =,			number,						max number of characters for inputBox
+		staticText =,			string,						string that can't be deleted
+		limit =,			string, 					keyboard limits for inputBox
+		align =,			string,						text alignment for inputBox
+		label =,			table,						inputBox label
+			text =,			string,						label text
+			x =,			string,						label x position
+			y =, 			string,						label y position
+			adjustX =,		number,						x position adjustment
+			adjustY =,		number, 					y position adjustment
+			color =,		table,						arg1 is color name, arg2 is color alpha
+			font =,			table,						arg1 is font name, arg2 is fontSize
+
+	NOTE:
+	** All options or optional
+	   default options are:
+
+	   help			= ""
+	   textColor 		= { "black", 1 }
+	   boxColor		= { "white", 1 }
+	   strokeColor      	= { "white", 1 }
+	   strokeWidth		= 4
+	   focus		= { "cornflowerBlue", 1 }
+	   font 		= { native.systemFont, ( inputBox.height - 8 ) }
+	   maxChar 		= 20
+	   staticText 		= "" ** some issues with native keyboard
+	   limit 		= "standard",		-- "standard", "alpha", "noArrow", "alphaNoArrow", "numPad", "numPad_noArrow"
+	   align 		= "left"
+	   label 		= { text = "label_"..currentLabelCount,
+	   			       x = "left",	—- “left”, “center”, “right”
+	   			       y = "center",	—- “top”,  “center”, “bottom”
+	   			 adjustX = 0,
+	   			 adjustY = 0,
+	   			   color = { "white", 1 },
+	   			    font = { native.systemFont, inputBox font size } }
+
+
+
+
+
+
